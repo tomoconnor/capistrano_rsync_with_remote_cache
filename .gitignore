@@ -5,9 +5,5 @@
 /coverage/
 *.gem
 .yardoc
-<<<<<<< HEAD
 .DS_Store
-
-=======
 /Gemfile.lock
->>>>>>> e16ed8a4659b967012f33fa8bbb27c60e7963ba1
