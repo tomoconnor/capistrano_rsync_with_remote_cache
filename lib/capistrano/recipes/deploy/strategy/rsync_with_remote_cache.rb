@@ -52,7 +52,7 @@ module Capistrano
         end
         
         def rsync_command_for(server)
-          "rsync #{rsync_options} --rsh='#{remote_shell_command(server)}' #{" -o \"ProxyCommand ssh #{configuration[:gateway]} nc -w300 %h %p\"" if configuration[:gateway]}' '#{local_cache_path}/' #{rsync_host(server)}:#{repository_cache_path}/"
+          "rsync #{rsync_options} --rsh='#{remote_shell_command(server)}' '#{local_cache_path}/' #{rsync_host(server)}:#{repository_cache_path}/"
         end
         
         def mark_local_cache
@@ -64,7 +64,6 @@ module Capistrano
           if ssh_options.has_key?(:config)
             cmd << %Q{ -F "#{ssh_options[:config]}"}
           end
-          cmd << " -i #{ssh_options[:keys]}" if ssh_options[:keys]
           cmd
         end
         
