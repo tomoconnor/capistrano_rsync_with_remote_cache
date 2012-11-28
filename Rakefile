@@ -4,7 +4,7 @@ require 'rake/testtask'
 
 spec = Gem::Specification.new do |s|
   s.name             = 'capistrano_rsync_with_remote_cache'
-  s.version          = '2.4.2'
+  s.version          = '2.4.8'
   s.has_rdoc         = true
   s.extra_rdoc_files = %w(README.rdoc)
   s.rdoc_options     = %w(--main README.rdoc)
