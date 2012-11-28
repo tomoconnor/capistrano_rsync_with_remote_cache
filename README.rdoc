@@ -101,5 +101,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 * https://github.com/vigetlabs/capistrano_rsync_with_remote_cache/pull/8
 
-* https://github.com/vigetlabs/capistrano_rsync_with_remote_cache/pull/9
+* https://github.com/vigetlabs/capistrano_rsync_with_remote_cache/pull/12
 
