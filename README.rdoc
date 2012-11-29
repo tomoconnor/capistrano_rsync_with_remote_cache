@@ -28,6 +28,14 @@ To use this deployment strategy, add this line to your <tt>deploy.rb</tt> file:
 
     set :deploy_via, :rsync_with_remote_cache
 
+To set SSH Port for rsync:
+    ssh_options[:port] = 2222
+
+To set SSH Config file:
+    ssh_options[:config] = /path/to/ssh/config.file
+
+
+
 == Under the Hood
 
 This strategy maintains two cache directories:
