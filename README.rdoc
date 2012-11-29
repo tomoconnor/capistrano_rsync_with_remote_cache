@@ -34,6 +34,9 @@ To set SSH Port for rsync:
 To set SSH Config file:
     ssh_options[:config] = /path/to/ssh/config.file
 
+To set rsync global options (used on all invocations)
+   set :rsync_global_options, "--rsync-path='sudo rsync'"
+
 
 
 == Under the Hood

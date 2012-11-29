@@ -21,7 +21,7 @@ module Capistrano
         
 
         default_attribute :rsync_options, "-az --delete --exclude '.git/' --exclude=.hg*  --exclude=.svn*"
-
+        default_attribute :rsync_global_options, ""
         default_attribute :local_cache, '.rsync_cache'
         default_attribute :repository_cache, 'cached-copy'
 
@@ -48,11 +48,11 @@ module Capistrano
         end
         
         def copy_remote_cache
-          run("rsync -a --delete #{repository_cache_path}/ #{configuration[:release_path]}/")
+          run("rsync #{rsync_global_options} -a --delete #{repository_cache_path}/ #{configuration[:release_path]}/")
         end
         
         def rsync_command_for(server)
-          "rsync #{rsync_options} --rsh='#{remote_shell_command(server)}' '#{local_cache_path}/' #{rsync_host(server)}:#{repository_cache_path}/"
+          "rsync #{rsync_global_options} #{rsync_options} --rsh='#{remote_shell_command(server)}' '#{local_cache_path}/' #{rsync_host(server)}:#{repository_cache_path}/"
         end
         
         def mark_local_cache
