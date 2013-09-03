@@ -21,12 +21,13 @@ module Capistrano
         
 
         default_attribute :rsync_options, "-az --delete --exclude '.git/' --exclude=.hg*  --exclude=.svn*"
-
         default_attribute :local_cache, '.rsync_cache'
+        default_attribute :local_cache_command, nil
         default_attribute :repository_cache, 'cached-copy'
 
         def deploy!
           update_local_cache
+          system(local_cache_command) if local_cache_command
           update_remote_cache
           copy_remote_cache
         end
