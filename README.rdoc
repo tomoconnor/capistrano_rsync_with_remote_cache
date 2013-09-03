@@ -6,6 +6,11 @@ This gem provides a deployment strategy for Capistrano which combines the
 <tt>rsync</tt> command with a remote cache, allowing fast deployments from SCM
 repositories behind firewalls.
 
+== Changes in this fork
+
+This fork adds a <tt>local_cache_command</tt> parameter, which can be used
+to execute a command on the local cache before deployment.
+
 == Requirements
 
 This gem supports Subversion, Git, Mercurial and Bazaar. Only Subversion and
